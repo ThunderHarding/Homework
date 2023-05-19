@@ -1,0 +1,19 @@
+def convert_miles_to_kilometers(miles):
+    kilometers = miles * 1.60934
+    print("That converts to", kilometers, "kilometers")
+
+if __name__ == '__main__':
+    print("This program converts measurements in miles to kilometers.")
+    print("For your reference the formula is: 1 mile = 1.60934 kilometers\n")
+
+    while True:
+        try:
+            miles = float(input("Enter the number of miles: "))
+            convert_miles_to_kilometers(miles)
+        except ValueError:
+            print("An exception occurred, try again by entering only a number")
+        finally:
+            print("\t\t")
+            answer = input("Do you want to convert another measurement? (yes or no): ")
+            if answer.lower() != 'yes':
+                break
