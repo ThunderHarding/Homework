@@ -1,0 +1,13 @@
+initial_investment = int(input("Please enter the initial investment (as a whole number): "))
+rate = 0.03
+investment_amount = initial_investment
+
+print("\t\t")
+print("Year\tInvestment Amount")
+print("\t\t")
+for year in range(1, 25):
+    investment_amount *= (1 + rate)
+    print(year, "\t\t$", round(investment_amount, 2))
+
+total_return = round(investment_amount / initial_investment, 1)
+print("\nTotal return after 8 years: r 8:", total_return)
