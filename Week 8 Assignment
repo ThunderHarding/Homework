@@ -1,0 +1,62 @@
+class Vehicle:
+    def __init__(self, make, model):
+        self.make = make
+        self.model = model
+
+
+class Car(Vehicle):
+    def __init__(self, make, model, doors):
+        super().__init__(make, model)
+        self.doors = doors
+
+
+class Truck(Vehicle):
+    def __init__(self, make, model, bed_length):
+        super().__init__(make, model)
+        self.bed_length = bed_length
+
+
+def add_car():
+    make = input("Please enter the car make: ")
+    model = input("Please enter the car model: ")
+    doors = input("Please enter the number of doors: ")
+
+    car = Car(make, model, doors)
+    print("The number of doors:", car.doors)
+    print("The make is:", car.make)
+    print("The model is:", car.model)
+    print("Your car has been added to the Garage.")
+
+
+def add_truck():
+    make = input("Please enter the truck make: ")
+    model = input("Please enter the truck model: ")
+    bed_length = input("Please enter the bed length: ")
+
+    truck = Truck(make, model, bed_length)
+    print("The bed length:", truck.bed_length)
+    print("The make is:", truck.make)
+    print("The model is:", truck.model)
+    print("Your truck has been added to the Garage.")
+
+
+def main():
+    print("Welcome to Bellevue University Virtual Garage")
+    choice = 0
+
+    while choice != '3':
+        print("Enter 1 to make a car, 2 to make a truck, or 3 to quit:")
+        choice = input()
+
+        if choice == '1':
+            add_car()
+        elif choice == '2':
+            add_truck()
+        elif choice == '3':
+            print("Exiting the program.")
+        else:
+            print("Invalid choice. Please try again.")
+
+
+if __name__ == "__main__":
+    main()
